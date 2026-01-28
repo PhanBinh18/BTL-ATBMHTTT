@@ -1,9 +1,7 @@
 # Hệ thống E-commerce Security 
 Dự án nghiên cứu về SQL injection
 ## Yêu cầu hệ thống 
-* Java 21
-* MySQL
-* Maven
+* Docker Desktop
 ## Cơ sở dữ liệu 
 Datahase bao gồm các bảng:
 * User
@@ -12,8 +10,22 @@ Datahase bao gồm các bảng:
 * Products
 
 ## Hướng dẫn sử dụng 
-1. Cấu hình:
-Đổi tên file [application-local.properties.example](src/main/resources/application-local.properties.example) thành application-local.properties
-2. Nhập thông tin database trên máy local
-3. 
- 
+1. Khởi động dịch vụ
+Chạy lệnh sau để khởi động MySQL và Springboot
+```docker compose up -d```
+2. Kiểm tra trạng thái
+Xem trạng thái các containers:
+```docker compose ps```
+Xem logs:
+```docker compose logs -f```
+3. Kết nối database
+Thông tin kết nối:
+* Host: localhost
+* Port: 3307
+* Database: ecommerce_db
+* Username: dev_user
+* Password: 123456
+Kết nối qua terminal:
+```docker compose exec db mysql -u dev_user -p ecommerce_db```
+Nhập password: 123456
+* 
