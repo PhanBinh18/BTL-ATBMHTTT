@@ -5,7 +5,9 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: ecommerce_db
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: dev_user
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_PASSWORD: 123456
     ports:
       - "3307:3306"
     volumes:
@@ -28,9 +30,9 @@ services:
       db:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: ${DB_URL}
-      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
-      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/ecommerce_db?allowMultiQueries=true&allowPublicKeyRetrieval=true&useSSL=false
+      SPRING_DATASOURCE_USERNAME: dev_user
+      SPRING_DATASOURCE_PASSWORD: 123456
 
 volumes:
   db_data:
