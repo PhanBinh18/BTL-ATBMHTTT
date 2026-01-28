@@ -39,6 +39,8 @@ Thông tin kết nối:
 * Username: dev_user
 * Password: 123456
 Kết nối qua terminal:
-```docker compose exec db mysql -u dev_user -p ecommerce_db```
+```bash
+docker compose exec db mysql -u dev_user -p ecommerce_db
+```
+
 Nhập password: 123456
-* 
