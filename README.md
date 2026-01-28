@@ -10,14 +10,27 @@ Datahase bao gồm các bảng:
 * Products
 
 ## Hướng dẫn sử dụng 
-1. Khởi động dịch vụ
-Chạy lệnh sau để khởi động MySQL và Springboot
-```docker compose up -d```
-2. Kiểm tra trạng thái
+## 1. Khởi động dịch vụ
+Chạy lệnh sau để khởi động MySQL và Spring Boot:
+
+```bash
+docker compose up -d
+```
+
+## 2. Kiểm tra trạng thái
+
 Xem trạng thái các containers:
-```docker compose ps```
+
+```bash
+docker compose ps
+```
+
 Xem logs:
-```docker compose logs -f```
+
+```bash
+docker compose logs -f
+```
+
 3. Kết nối database
 Thông tin kết nối:
 * Host: localhost
