@@ -31,13 +31,14 @@ Xem logs:
 docker compose logs -f
 ```
 
-3. Kết nối database
+## 3. Kết nối database
 Thông tin kết nối:
 * Host: localhost
 * Port: 3307
 * Database: ecommerce_db
 * Username: dev_user
 * Password: 123456
+
 Kết nối qua terminal:
 ```bash
 docker compose exec db mysql -u dev_user -p ecommerce_db
