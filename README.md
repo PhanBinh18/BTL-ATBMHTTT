@@ -11,11 +11,13 @@ Datahase bao gồm các bảng:
 
 ## Hướng dẫn sử dụng 
 ## 1. Khởi động dịch vụ
-Chạy lệnh sau để khởi động MySQL và Spring Boot:
+Chạy lệnh sau để khởi động MySQL:
 
 ```bash
-docker compose up -d
+docker compose up -d db
 ```
+
+Run Application trực tiếp trên IDE để khởi động cho nhanh nhé ae!
 
 ## 2. Kiểm tra trạng thái
 
