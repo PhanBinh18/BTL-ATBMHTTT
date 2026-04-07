@@ -35,17 +35,23 @@ public class Repository {
             // ================= FILTER =================
             // http://localhost:8081/login?username=admin%5C&password=%20OR%201=1%20--%20
             // "http://localhost:8081/login?username=admin\&password= OR 1=1 -- "
+            // ma hoa hoan toan:
+            // http://localhost:8081/login?username=admin%5C&password=%20%6f%72%20%31%3d%31%20%23 
             else if (mode.equals("FILTER")) {
-                username = username.replace("'", "");
-                password = password.replace("'", "");
+                username = username.replace("'", "").replace("--", "").replace("OR", "").replace("AND", "");
+                password = password.replace("'", "").replace("--", "").replace("OR", "").replace("AND", "");
 
                 String sql = "SELECT count(*) FROM users WHERE username = '"
                         + username + "' AND password = '" + password + "'";
 
                 System.out.println("[SQL FILTER]: " + sql);
 
-                int count = jdbcTemplate.queryForObject(sql, Integer.class);
-                return count > 0;
+                try {
+                    int count = jdbcTemplate.queryForObject(sql, Integer.class);
+                    return count > 0;
+                } catch (Exception e) {
+                    return false;
+                }
             }
 
             // ================= SECURE =================
